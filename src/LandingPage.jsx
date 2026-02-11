@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import AIChatbot from './components/AIChatbot';
 import suxrobPhoto from './assets/Suxrob brat.jpg';
 import xayrulloPhoto from './assets/xayrullo.jpg';
-import GulasalPhoto from './assets/Gulasal.jpg';
+import GulasalPhoto from './assets/gulasal.jpg';
 import semonbekPhoto from './assets/semonbek.jpg';
 
 import {
