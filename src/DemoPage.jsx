@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Play, CheckCircle2, Monitor, Bell, Map, Activity, Siren } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// 🔴 O'ZGARTIRISH: Bu yerga YouTube video ID sini kiriting
+const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // Masalan: https://www.youtube.com/watch?v=dQw4w9WgXcQ -> ID: dQw4w9WgXcQ
+
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -52,32 +55,16 @@ export default function DemoPage() {
                     <motion.div variants={fadeUp} className="mb-16">
                         <div className="relative rounded-3xl overflow-hidden border border-gray-800 bg-[#0a1628]">
                             {/* Video Placeholder - Replace with actual video embed */}
-                            <div className="aspect-video bg-gradient-to-br from-gray-900 to-[#0a1628] flex items-center justify-center relative group cursor-pointer">
-
-                                {/* Background Pattern */}
-                                <div className="absolute inset-0 opacity-20" style={{
-                                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-                                }} />
-
-                                {/* Play Button */}
-                                <div className="relative z-10 text-center">
-                                    <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-[0_0_40px_rgba(6,182,212,0.3)]">
-                                        <Play size={40} className="text-white ml-2" fill="white" />
-                                    </div>
-                                    <p className="text-xl font-semibold text-white">Demo Video (1-5 daqiqa)</p>
-                                    <p className="text-gray-400 mt-2">Bosing va ko'ring</p>
-                                </div>
-
-                                {/* Video Controls Mock */}
-                                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                                    <div className="h-1 bg-gray-700 rounded-full overflow-hidden">
-                                        <div className="h-full w-0 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full" />
-                                    </div>
-                                    <div className="flex items-center justify-between mt-2 text-sm text-gray-400">
-                                        <span>0:00</span>
-                                        <span>3:45</span>
-                                    </div>
-                                </div>
+                            <div className="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-gray-800">
+                                <iframe
+                                    className="w-full h-full"
+                                    src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0`}
+                                    title="Demo Video"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                ></iframe>
                             </div>
                         </div>
                     </motion.div>
@@ -111,6 +98,38 @@ export default function DemoPage() {
                                         </li>
                                     ))}
                                 </ul>
+
+                                <div className="mt-8 pt-6 border-t border-gray-800">
+                                    <h4 className="text-sm font-semibold text-cyan-400 mb-4 uppercase tracking-wider">Demo Kirish Ma'lumotlari</h4>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div className="bg-[#0a1628] border border-cyan-500/20 rounded-xl p-4 hover:border-cyan-500/40 transition-colors">
+                                            <div className="text-xs text-gray-500 mb-3 font-medium uppercase tracking-wider border-b border-gray-800 pb-2">Super Admin</div>
+                                            <div className="space-y-2 font-mono text-sm">
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Login:</span>
+                                                    <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded">super</span>
+                                                </div>
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Parol:</span>
+                                                    <span className="text-cyan-400 bg-cyan-900/20 px-2 py-0.5 rounded">123</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="bg-[#0a1628] border border-cyan-500/20 rounded-xl p-4 hover:border-cyan-500/40 transition-colors">
+                                            <div className="text-xs text-gray-500 mb-3 font-medium uppercase tracking-wider border-b border-gray-800 pb-2">MChS Xodimi</div>
+                                            <div className="space-y-2 font-mono text-sm">
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Login:</span>
+                                                    <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded">mchs</span>
+                                                </div>
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Parol:</span>
+                                                    <span className="text-cyan-400 bg-cyan-900/20 px-2 py-0.5 rounded">123</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
 
@@ -128,7 +147,7 @@ export default function DemoPage() {
 
                                 <div className="space-y-4">
                                     <a
-                                        href="http://localhost:5173"
+                                        href="https://mchs.unusual.uz/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="block w-full py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-center text-black font-bold rounded-xl hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all flex items-center justify-center gap-2"
@@ -147,13 +166,31 @@ export default function DemoPage() {
                                 <div className="mt-6 p-4 bg-[#0a1628] rounded-xl border border-gray-800">
                                     <p className="text-sm text-gray-400 mb-2">Demo kirish ma'lumotlari:</p>
                                     <div className="grid grid-cols-2 gap-4 text-sm">
-                                        <div>
-                                            <span className="text-gray-500">Login:</span>
-                                            <code className="ml-2 text-cyan-400">admin</code>
+                                        <div className="bg-[#0a1628] border border-cyan-500/20 rounded-xl p-4 hover:border-cyan-500/40 transition-colors">
+                                            <div className="text-xs text-gray-500 mb-3 font-medium uppercase tracking-wider border-b border-gray-800 pb-2">Super Admin</div>
+                                            <div className="space-y-2 font-mono text-sm">
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Login:</span>
+                                                    <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded">super</span>
+                                                </div>
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Parol:</span>
+                                                    <span className="text-cyan-400 bg-cyan-900/20 px-2 py-0.5 rounded">123</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <span className="text-gray-500">Parol:</span>
-                                            <code className="ml-2 text-cyan-400">admin123</code>
+                                        <div className="bg-[#0a1628] border border-cyan-500/20 rounded-xl p-4 hover:border-cyan-500/40 transition-colors">
+                                            <div className="text-xs text-gray-500 mb-3 font-medium uppercase tracking-wider border-b border-gray-800 pb-2">MChS Xodimi</div>
+                                            <div className="space-y-2 font-mono text-sm">
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Login:</span>
+                                                    <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded">mchs</span>
+                                                </div>
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-500 text-xs">Parol:</span>
+                                                    <span className="text-cyan-400 bg-cyan-900/20 px-2 py-0.5 rounded">123</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
