@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Play, CheckCircle2, Monitor, Bell, Map, Activity, Siren } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// 🔴 O'ZGARTIRISH: Bu yerga YouTube video ID sini kiriting
-const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // Masalan: https://www.youtube.com/watch?v=dQw4w9WgXcQ -> ID: dQw4w9WgXcQ
+const YOUTUBE_VIDEO_ID = "1PPeyxzXyEM"; 
 
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
